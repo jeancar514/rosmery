@@ -1,8 +1,15 @@
 // Curtain
 const curtain = document.getElementById('curtain');
 const enterBtn = document.getElementById('enterBtn');
+function unlockVideos(){
+  document.querySelectorAll('.gif-video').forEach(v=>{
+    const p = v.play();
+    if(p && p.then){ p.then(()=>{ v.pause(); v.currentTime = 0; }).catch(()=>{}); }
+  });
+}
 function openCurtain(){
   curtain.classList.add('hidden');
+  unlockVideos();
   startStories();
 }
 enterBtn.addEventListener('click', openCurtain);
@@ -59,7 +66,7 @@ function playVideoIn(slide){
 }
 
 function revealContents(slide){
-  const items = Array.from(slide.querySelectorAll('.fx'));
+  const items = Array.from(slide.querySelectorAll('.fx, .polaroid'));
   items.forEach((el,i)=>{
     el.classList.remove('in');
     el.style.transitionDelay = (i * 110) + 'ms';

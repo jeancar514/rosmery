@@ -275,6 +275,13 @@ img{max-width:100%;display:block;}
   width:40vw;
   max-width:190px;
   --ex:0px;--ey:46px;--escale:1;
+  opacity:0;
+  transform:rotate(var(--rot,0deg)) translate(var(--ex),var(--ey)) scale(var(--escale));
+  transition:opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1);
+}
+.polaroid.in{
+  opacity:1;
+  transform:rotate(var(--rot,0deg)) translate(0,0) scale(1);
 }
 .polaroid::before{
   content:"";
