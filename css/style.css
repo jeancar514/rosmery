@@ -1,15 +1,21 @@
 :root{
-  --bg: #0d0b08;
-  --bg-alt: #15120d;
-  --gold: #cda653;
-  --gold-light: #ecd6a0;
-  --emerald: #3f6b57;
-  --emerald-light: #6ea98c;
-  --wine: #7a3244;
-  --wine-light: #b06073;
-  --cream: #f3ead9;
-  --text-muted: #b9ac93;
-  --line: rgba(205,166,83,0.25);
+  --bg: #18130e;
+  --bg-alt: #201a13;
+  --gold: #dba843;
+  --gold-light: #f6d36e;
+  --emerald: #2f8f66;
+  --emerald-light: #5fd6a0;
+  --wine: #c23b4e;
+  --wine-light: #ef6d7c;
+  --copper: #db8027;
+  --copper-light: #ffb35f;
+  --sapphire: #3568a8;
+  --sapphire-light: #74b0f0;
+  --plum: #8a4fae;
+  --plum-light: #cd97ec;
+  --cream: #f6ecd9;
+  --text-muted: #c2b299;
+  --line: rgba(219,168,67,0.3);
 }
 
 *{box-sizing:border-box;}
@@ -32,8 +38,11 @@ img{max-width:100%;display:block;}
 #curtain{
   position:fixed;inset:0;z-index:100;
   background:
-    radial-gradient(ellipse at 50% 20%, rgba(63,107,87,0.25), transparent 60%),
-    radial-gradient(ellipse at 80% 80%, rgba(122,50,68,0.25), transparent 55%),
+    radial-gradient(ellipse at 50% 15%, rgba(219,168,67,0.28), transparent 55%),
+    radial-gradient(ellipse at 12% 75%, rgba(47,143,102,0.30), transparent 55%),
+    radial-gradient(ellipse at 88% 85%, rgba(194,59,78,0.28), transparent 55%),
+    radial-gradient(ellipse at 90% 12%, rgba(53,104,168,0.26), transparent 50%),
+    radial-gradient(ellipse at 30% 95%, rgba(138,79,174,0.22), transparent 50%),
     var(--bg);
   display:flex;align-items:center;justify-content:center;
   transition:opacity 1s ease, visibility 1s ease;
@@ -65,9 +74,15 @@ img{max-width:100%;display:block;}
 #sparkles{position:fixed;inset:0;pointer-events:none;z-index:1;}
 .spark{
   position:absolute;width:3px;height:3px;border-radius:50%;
-  background:var(--gold-light);opacity:0;
+  opacity:0;
   animation:spark-float linear infinite;
 }
+.spark.c-gold{background:var(--gold-light);}
+.spark.c-emerald{background:var(--emerald-light);}
+.spark.c-wine{background:var(--wine-light);}
+.spark.c-copper{background:var(--copper-light);}
+.spark.c-sapphire{background:var(--sapphire-light);}
+.spark.c-plum{background:var(--plum-light);}
 @keyframes spark-float{
   0%{opacity:0;transform:translateY(0) scale(0.5);}
   10%{opacity:.8;}
@@ -100,9 +115,11 @@ section{
 .hero-glow{
   position:absolute;inset:0;z-index:-1;
   background:
-    radial-gradient(ellipse 60% 40% at 50% 15%, rgba(205,166,83,0.16), transparent 60%),
-    radial-gradient(ellipse 50% 35% at 15% 85%, rgba(63,107,87,0.18), transparent 60%),
-    radial-gradient(ellipse 50% 35% at 90% 75%, rgba(122,50,68,0.18), transparent 60%);
+    radial-gradient(ellipse 55% 35% at 50% 10%, rgba(219,168,67,0.24), transparent 60%),
+    radial-gradient(ellipse 45% 30% at 8% 80%, rgba(47,143,102,0.26), transparent 60%),
+    radial-gradient(ellipse 45% 30% at 95% 70%, rgba(194,59,78,0.24), transparent 60%),
+    radial-gradient(ellipse 40% 28% at 82% 5%, rgba(53,104,168,0.20), transparent 55%),
+    radial-gradient(ellipse 36% 26% at 25% 40%, rgba(138,79,174,0.16), transparent 55%);
 }
 .kicker{
   letter-spacing:0.35em;text-transform:uppercase;
@@ -146,11 +163,31 @@ section{
   50%{opacity:1;}
 }
 
-/* ---------- CHAPTERS ---------- */
+/* ---------- CHAPTER COLOR THEMES ---------- */
+.chapter{position:relative;}
+.chapter::before{
+  content:"";
+  position:absolute;
+  top:-10%;left:50%;transform:translateX(-50%);
+  width:140%;height:120%;
+  z-index:-1;
+  background:radial-gradient(ellipse 50% 40% at 50% 20%, var(--wash, transparent), transparent 70%);
+  opacity:0.5;
+  pointer-events:none;
+}
+.chapter--emerald{--wash: rgba(47,143,102,0.45);}
+.chapter--wine{--wash: rgba(194,59,78,0.42);}
+.chapter--copper{--wash: rgba(219,128,39,0.42);}
+.chapter--sapphire{--wash: rgba(53,104,168,0.45);}
+
+.chapter--emerald .chapter-num{color:var(--emerald-light);}
+.chapter--wine .chapter-num{color:var(--wine-light);}
+.chapter--copper .chapter-num{color:var(--copper-light);}
+.chapter--sapphire .chapter-num{color:var(--sapphire-light);}
+
 .chapter-num{
   font-family:'Playfair Display',serif;
   font-style:italic;font-size:15px;
-  color:var(--emerald-light);
   letter-spacing:0.2em;
   margin:0 0 10px;
 }
@@ -181,21 +218,32 @@ section{
   padding-bottom:20px;
 }
 .polaroid{
+  position:relative;
   background:#efe6d2;
   padding:12px 12px 28px;
   border-radius:2px;
   box-shadow:0 18px 34px rgba(0,0,0,0.45);
 }
+.polaroid::before{
+  content:"";
+  position:absolute;
+  top:-12px;left:50%;
+  width:54px;height:22px;
+  transform:translateX(-50%) rotate(-3deg);
+  background:var(--tape, var(--gold));
+  opacity:0.55;
+  box-shadow:0 2px 6px rgba(0,0,0,0.25);
+}
+.polaroid.p1{transform:rotate(-5deg);--tape:var(--copper);}
+.polaroid.p2{transform:rotate(4deg);margin-top:26px;--tape:var(--emerald);}
+.polaroid.p3{transform:rotate(3deg);--tape:var(--wine);}
+.polaroid.p4{transform:rotate(-4deg);margin-top:26px;--tape:var(--sapphire);}
 .polaroid img{
   width:100%;
   aspect-ratio:3/4;
   object-fit:cover;
   filter:sepia(0.12) saturate(1.05);
 }
-.polaroid.p1{transform:rotate(-5deg);}
-.polaroid.p2{transform:rotate(4deg);margin-top:26px;}
-.polaroid.p3{transform:rotate(3deg);}
-.polaroid.p4{transform:rotate(-4deg);margin-top:26px;}
 .polaroid.reveal.in.p1{transform:rotate(-5deg) translateY(0);}
 .polaroid.reveal.in.p2{transform:rotate(4deg) translateY(0);}
 .polaroid.reveal.in.p3{transform:rotate(3deg) translateY(0);}
@@ -221,6 +269,18 @@ section{
 .closing{
   text-align:center;
   padding:130px 26px 160px;
+  position:relative;
+}
+.closing::before{
+  content:"";
+  position:absolute;
+  top:0;left:50%;transform:translateX(-50%);
+  width:160%;height:100%;
+  z-index:-1;
+  background:
+    radial-gradient(ellipse 40% 30% at 20% 20%, rgba(219,168,67,0.24), transparent 60%),
+    radial-gradient(ellipse 40% 30% at 80% 70%, rgba(138,79,174,0.20), transparent 60%);
+  pointer-events:none;
 }
 .closing-line{
   font-family:'Playfair Display',serif;
@@ -243,7 +303,7 @@ section{
 .signature{
   font-family:'Parisienne',cursive;
   font-size:30px;
-  color:var(--emerald-light);
+  color:var(--copper-light);
 }
 
 /* ---------- RESPONSIVE ---------- */

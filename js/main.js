@@ -23,9 +23,11 @@ revealEls.forEach(el=>io.observe(el));
 
 // Sparkles
 const sparkleLayer = document.getElementById('sparkles');
+const sparkColors = ['c-gold','c-emerald','c-wine','c-copper','c-sapphire','c-plum'];
 function spawnSpark(){
   const s = document.createElement('div');
-  s.className = 'spark';
+  const color = sparkColors[Math.floor(Math.random()*sparkColors.length)];
+  s.className = 'spark ' + color;
   s.style.left = Math.random()*100 + 'vw';
   s.style.top = 100 - Math.random()*10 + 'vh';
   const duration = 6 + Math.random()*6;
