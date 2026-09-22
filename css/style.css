@@ -209,7 +209,7 @@ img{max-width:100%;display:block;}
 }
 
 /* ---------- CHAPTER COLOR THEMES ---------- */
-.chapter{position:relative;max-width:640px;margin:0 auto;}
+.chapter{max-width:640px;margin:0 auto;}
 .chapter::before{
   content:"";
   position:absolute;
@@ -343,7 +343,7 @@ img{max-width:100%;display:block;}
 }
 
 /* ---------- CLOSING ---------- */
-.closing{max-width:560px;margin:0 auto;position:relative;}
+.closing{max-width:560px;margin:0 auto;}
 .closing::before{
   content:"";
   position:absolute;
