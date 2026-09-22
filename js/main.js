@@ -76,17 +76,18 @@ function playVideoIn(slide){
   }
 }
 
+// Reveals a slide's photos via a plain CSS transition, staggered per photo.
+// Uses a forced synchronous reflow (not requestAnimationFrame) to commit
+// the "hidden" state before flipping to "in", so this can never get
+// stuck invisible even if the browser skips a paint tick for the tab.
 function revealContents(slide){
-  const items = Array.from(slide.querySelectorAll('.fx, .polaroid'));
+  const items = Array.from(slide.querySelectorAll('.polaroid'));
   items.forEach((el,i)=>{
     el.classList.remove('in');
     el.style.transitionDelay = (i * 110) + 'ms';
   });
-  requestAnimationFrame(()=>{
-    requestAnimationFrame(()=>{
-      items.forEach(el=> el.classList.add('in'));
-    });
-  });
+  void slide.offsetHeight; // force reflow
+  items.forEach(el=> el.classList.add('in'));
 }
 
 function goTo(index){
@@ -109,17 +110,16 @@ function goTo(index){
   current = index;
   const slide = slides[current];
   slide.classList.add('active');
-  revealContents(slide);
   playVideoIn(slide);
+  revealContents(slide);
 
   const duration = parseInt(slide.dataset.duration, 10) || 6000;
   const seg = segs[current];
   seg.classList.add('active');
   const fill = seg.querySelector('.fill');
-  requestAnimationFrame(()=>{
-    fill.style.animationDuration = duration + 'ms';
-    fill.style.animation = `seg-fill ${duration}ms linear forwards`;
-  });
+  void fill.offsetHeight; // force reflow before (re)starting the fill animation
+  fill.style.animationDuration = duration + 'ms';
+  fill.style.animation = `seg-fill ${duration}ms linear forwards`;
 
   if(current < slides.length - 1 && duration < 90000){
     advanceTimer = setTimeout(()=> goTo(current + 1), duration);
