@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
 <title>Rosmery · Un día como hoy</title>
 <meta name="description" content="Para Rosmery, en su día.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,93 +23,93 @@
 
 <div id="sparkles" aria-hidden="true"></div>
 
-<main id="main">
+<div id="stories">
+
+  <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+
+  <div class="tap-zone tap-prev" id="tapPrev" aria-hidden="true"></div>
+  <div class="tap-zone tap-next" id="tapNext" aria-hidden="true"></div>
 
   <!-- HERO -->
-  <section class="hero reveal-root">
+  <section class="slide hero" data-duration="5500">
     <div class="hero-glow" aria-hidden="true"></div>
-    <p class="kicker reveal">22 de septiembre</p>
-    <h1 class="hero-title reveal">Un día<br>como hoy</h1>
-    <p class="hero-sub reveal">vino al mundo la razón<br>de tantas cosas buenas</p>
-    <p class="hero-name reveal">Rosmery</p>
-    <div class="scroll-cue reveal" aria-hidden="true">
-      <span></span>
-      <small>desliza</small>
-    </div>
+    <p class="kicker fx">22 de septiembre</p>
+    <h1 class="hero-title fx">Un día<br>como hoy</h1>
+    <p class="hero-sub fx">vino al mundo la razón<br>de tantas cosas buenas</p>
+    <p class="hero-name fx">Rosmery</p>
+    <p class="tap-hint fx">toca para continuar</p>
   </section>
 
   <!-- CAPITULO I -->
-  <section class="chapter chapter--emerald">
-    <p class="chapter-num reveal">I</p>
-    <h2 class="chapter-title reveal">Lo que el tiempo no cambia</h2>
-    <div class="prose reveal">
+  <section class="slide chapter chapter--emerald" data-duration="7000">
+    <p class="chapter-num fx">I</p>
+    <h2 class="chapter-title fx">Lo que el tiempo no cambia</h2>
+    <div class="prose fx">
       <p>Hay personas que iluminan una habitación al entrar. Tú iluminas hasta los días grises.</p>
       <p>Dicen que la vida se mide en momentos que te quitan el aliento — contigo se me olvida contar.</p>
       <p>Tu risa tiene ese extraño don de arreglar lo que parecía roto, y esa forma tuya de sentirlo todo tan profundo es, aunque no lo sepas, una de las maneras más valientes de amar que existen.</p>
     </div>
   </section>
 
-  <section class="scrapbook reveal-root" id="gallery1">
-    <div class="polaroid p1 reveal"><img loading="lazy" src="media/photos/photo01.jpeg" alt="Rosmery"></div>
-    <div class="polaroid p2 reveal"><img loading="lazy" src="media/photos/photo02.jpeg" alt="Rosmery"></div>
-    <div class="polaroid p3 reveal"><img loading="lazy" src="media/photos/photo03.jpeg" alt="Rosmery"></div>
-    <div class="polaroid p4 reveal"><img loading="lazy" src="media/photos/photo04.jpeg" alt="Rosmery"></div>
+  <section class="slide scrapbook" data-duration="6000">
+    <div class="polaroid p1 fx-left"><img src="media/photos/photo01.jpeg" alt="Rosmery"></div>
+    <div class="polaroid p2 fx-zoom"><img src="media/photos/photo02.jpeg" alt="Rosmery"></div>
+    <div class="polaroid p3 fx-right"><img src="media/photos/photo03.jpeg" alt="Rosmery"></div>
+    <div class="polaroid p4 fx-up"><img src="media/photos/photo04.jpeg" alt="Rosmery"></div>
   </section>
 
-  <section class="video-block reveal-root">
-    <p class="chapter-num reveal">·</p>
-    <div class="video-frame reveal">
-      <video controls playsinline preload="metadata" src="media/videos/video01.mp4"></video>
+  <section class="slide video-block" data-duration="6500">
+    <div class="video-frame fx">
+      <video class="gif-video" muted loop playsinline disablePictureInPicture disableRemotePlayback preload="auto" controlsList="nodownload noplaybackrate nofullscreen" src="media/videos/video01.mp4"></video>
     </div>
   </section>
 
   <!-- CAPITULO II -->
-  <section class="chapter chapter--wine">
-    <p class="chapter-num reveal">II</p>
-    <h2 class="chapter-title reveal">Un amor así</h2>
-    <div class="prose reveal">
+  <section class="slide chapter chapter--wine" data-duration="6500">
+    <p class="chapter-num fx">II</p>
+    <h2 class="chapter-title fx">Un amor así</h2>
+    <div class="prose fx">
       <p>Hay un amor que es paciente. Que no necesita alzar la voz para quedarse.</p>
       <p>Un amor que no busca lo suyo, que se alegra con lo bueno, que aguanta, que cree, que espera.</p>
       <p class="prose-quiet">No lo escribieron pensando en nosotros, pero cada vez que lo leo, pienso en ti.</p>
     </div>
   </section>
 
-  <section class="scrapbook reveal-root" id="gallery2">
-    <div class="polaroid p1 reveal"><img loading="lazy" src="media/photos/photo05.jpeg" alt="Rosmery"></div>
-    <div class="polaroid p2 reveal"><img loading="lazy" src="media/photos/photo06.jpeg" alt="Rosmery"></div>
-    <div class="polaroid p3 reveal"><img loading="lazy" src="media/photos/photo07.jpeg" alt="Rosmery"></div>
-    <div class="polaroid p4 reveal"><img loading="lazy" src="media/photos/photo08.jpeg" alt="Rosmery"></div>
+  <section class="slide scrapbook" data-duration="6000">
+    <div class="polaroid p1 fx-down"><img src="media/photos/photo05.jpeg" alt="Rosmery"></div>
+    <div class="polaroid p2 fx-left"><img src="media/photos/photo06.jpeg" alt="Rosmery"></div>
+    <div class="polaroid p3 fx-zoom"><img src="media/photos/photo07.jpeg" alt="Rosmery"></div>
+    <div class="polaroid p4 fx-right"><img src="media/photos/photo08.jpeg" alt="Rosmery"></div>
   </section>
 
   <!-- CAPITULO III -->
-  <section class="chapter chapter--copper">
-    <p class="chapter-num reveal">III</p>
-    <h2 class="chapter-title reveal">Un mapa de instantes</h2>
-    <div class="prose reveal">
+  <section class="slide chapter chapter--copper" data-duration="6000">
+    <p class="chapter-num fx">III</p>
+    <h2 class="chapter-title fx">Un mapa de instantes</h2>
+    <div class="prose fx">
       <p>Si algún día alguien me pidiera pruebas de que la vida puede ser bonita, le mostraría esto.</p>
       <p>Fotos sueltas, videos cortos, nada perfecto — y aun así, todo perfecto, porque estás tú.</p>
     </div>
   </section>
 
-  <section class="scrapbook reveal-root" id="gallery3">
-    <div class="polaroid p1 reveal"><img loading="lazy" src="media/photos/photo09.jpeg" alt="Rosmery"></div>
-    <div class="polaroid p2 reveal"><img loading="lazy" src="media/photos/photo10.jpeg" alt="Rosmery"></div>
-    <div class="polaroid p3 reveal"><img loading="lazy" src="media/photos/photo11.jpeg" alt="Rosmery"></div>
-    <div class="polaroid p4 reveal"><img loading="lazy" src="media/photos/photo12.jpeg" alt="Rosmery"></div>
+  <section class="slide scrapbook" data-duration="6000">
+    <div class="polaroid p1 fx-right"><img src="media/photos/photo09.jpeg" alt="Rosmery"></div>
+    <div class="polaroid p2 fx-up"><img src="media/photos/photo10.jpeg" alt="Rosmery"></div>
+    <div class="polaroid p3 fx-left"><img src="media/photos/photo11.jpeg" alt="Rosmery"></div>
+    <div class="polaroid p4 fx-zoom"><img src="media/photos/photo12.jpeg" alt="Rosmery"></div>
   </section>
 
-  <section class="video-block reveal-root">
-    <p class="chapter-num reveal">·</p>
-    <div class="video-frame reveal">
-      <video controls playsinline preload="metadata" src="media/videos/video02.mp4"></video>
+  <section class="slide video-block" data-duration="6500">
+    <div class="video-frame fx">
+      <video class="gif-video" muted loop playsinline disablePictureInPicture disableRemotePlayback preload="auto" controlsList="nodownload noplaybackrate nofullscreen" src="media/videos/video02.mp4"></video>
     </div>
   </section>
 
   <!-- CAPITULO IV -->
-  <section class="chapter chapter--sapphire">
-    <p class="chapter-num reveal">IV</p>
-    <h2 class="chapter-title reveal">Lo que viene</h2>
-    <div class="prose reveal">
+  <section class="slide chapter chapter--sapphire" data-duration="7000">
+    <p class="chapter-num fx">IV</p>
+    <h2 class="chapter-title fx">Lo que viene</h2>
+    <div class="prose fx">
       <p>Hay historias que empiezan con "había una vez" y otras que apenas están escribiéndose.</p>
       <p>La nuestra la sigo escribiendo cada día, y no tengo planeado dejar de hacerlo.</p>
       <p>Si la vida me regala los años que espero, quiero seguir eligiéndote en cada uno de ellos.</p>
@@ -117,14 +117,14 @@
   </section>
 
   <!-- CLOSING -->
-  <section class="closing reveal-root">
-    <p class="closing-line reveal">Feliz vuelta al sol, Rosmery.</p>
-    <p class="closing-sub reveal">Que este año te encuentre tan libre, tan tú,<br>tan llena de vida como siempre.</p>
-    <p class="closing-final reveal">Y que en cada día como hoy, sepas que hay alguien<br>que sigue agradecido de que hayas nacido.</p>
-    <p class="signature reveal">— J.</p>
+  <section class="slide closing" data-duration="99999">
+    <p class="closing-line fx">Feliz vuelta al sol, Rosmery.</p>
+    <p class="closing-sub fx">Que este año te encuentre tan libre, tan tú,<br>tan llena de vida como siempre.</p>
+    <p class="closing-final fx">Y que en cada día como hoy, sepas que hay alguien<br>que sigue agradecido de que hayas nacido.</p>
+    <p class="signature fx">— J.</p>
   </section>
 
-</main>
+</div>
 
 <script src="js/main.js"></script>
 </body>
