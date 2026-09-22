@@ -253,6 +253,94 @@ img{max-width:100%;display:block;}
   font-style:italic;
 }
 
+/* ---------- MINI ANIMATIONS ---------- */
+.anim-box{
+  width:clamp(110px,32vw,160px);
+  aspect-ratio:1/1;
+  margin:10px auto 0;
+}
+.anim-box svg{ width:100%; height:auto; overflow:visible; display:block; }
+
+/* sun (chapter I) */
+.anim-sun .sun-core{
+  fill:var(--gold);
+  transform-origin:50px 50px;
+  animation:sun-pulse 3.2s ease-in-out infinite;
+}
+.anim-sun .sun-rays{
+  stroke:var(--gold-light);
+  stroke-width:4;
+  stroke-linecap:round;
+  transform-origin:50px 50px;
+  animation:sun-spin 18s linear infinite;
+}
+.anim-sun .sun-smile{
+  stroke:var(--bg);
+  stroke-width:3;
+  stroke-linecap:round;
+}
+.anim-sun .sun-eye{ fill:var(--bg); }
+@keyframes sun-pulse{
+  0%,100%{ transform:scale(1); filter:drop-shadow(0 0 6px rgba(219,168,67,0.5)); }
+  50%{ transform:scale(1.08); filter:drop-shadow(0 0 16px rgba(219,168,67,0.85)); }
+}
+@keyframes sun-spin{
+  from{ transform:rotate(0deg); }
+  to{ transform:rotate(360deg); }
+}
+
+/* sparkles (chapter II) */
+.anim-sparkle .spark{ fill:var(--gold-light); transform-origin:center; transform-box:fill-box; }
+.anim-sparkle .s1{ animation:spark-pop 2.6s ease-in-out infinite; }
+.anim-sparkle .s2{ fill:var(--wine-light); animation:spark-pop 2.6s ease-in-out .5s infinite; }
+.anim-sparkle .s3{ fill:var(--sapphire-light); animation:spark-pop 2.6s ease-in-out 1s infinite; }
+@keyframes spark-pop{
+  0%,100%{ transform:scale(0.6); opacity:.35; }
+  50%{ transform:scale(1.15); opacity:1; }
+}
+
+/* heartbeat (chapter III) */
+.anim-heartbeat .heart-shape{
+  fill:var(--wine-light);
+  transform-origin:50px 50px;
+  filter:drop-shadow(0 0 10px rgba(239,109,124,0.55));
+  animation:heartbeat 1.6s ease-in-out infinite;
+}
+@keyframes heartbeat{
+  0%,100%{ transform:scale(1); }
+  20%{ transform:scale(1.15); }
+  35%{ transform:scale(0.98); }
+  50%{ transform:scale(1.12); }
+  70%{ transform:scale(1); }
+}
+
+/* floating hearts (closing) */
+.anim-float-hearts{
+  position:relative;
+  width:clamp(140px,50vw,220px);
+  aspect-ratio:auto;
+  height:70px;
+  margin:8px auto 6px;
+}
+.anim-float-hearts .fh{
+  position:absolute;
+  bottom:0;
+  width:26px;height:16px;
+  opacity:0;
+}
+.anim-float-hearts .fh path{ fill:var(--copper-light); }
+.fh.f1{ left:14%; animation:float-up 3.6s ease-in .1s infinite; }
+.fh.f2{ left:44%; width:20px; height:12px; animation:float-up 3.6s ease-in 1.1s infinite; }
+.fh.f2 path{ fill:var(--gold-light); }
+.fh.f3{ left:72%; animation:float-up 3.6s ease-in 2.1s infinite; }
+.fh.f3 path{ fill:var(--wine-light); }
+@keyframes float-up{
+  0%{ transform:translateY(0) scale(0.7); opacity:0; }
+  15%{ opacity:1; }
+  80%{ opacity:.7; }
+  100%{ transform:translateY(-64px) scale(1.05); opacity:0; }
+}
+
 /* ---------- SCRAPBOOK ---------- */
 .scrapbook{
   max-width:480px;

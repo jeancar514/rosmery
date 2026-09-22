@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Parisienne&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="stylesheet" href="css/style.css?v=4">
 <link rel="icon" href="data:,">
 </head>
 <body>
@@ -45,7 +45,24 @@
     <p class="chapter-num fx">I</p>
     <h2 class="chapter-title fx"> Iluminas cada unos de mis dias con tu sonrisa </h2>
     <div class="prose fx">
-      una imagen animada bonita referente al titulo
+      <div class="anim-box anim-sun" aria-hidden="true">
+        <svg viewBox="0 0 100 100">
+          <g class="sun-rays">
+            <line x1="50" y1="4" x2="50" y2="18"/>
+            <line x1="50" y1="82" x2="50" y2="96"/>
+            <line x1="4" y1="50" x2="18" y2="50"/>
+            <line x1="82" y1="50" x2="96" y2="50"/>
+            <line x1="17" y1="17" x2="27" y2="27"/>
+            <line x1="73" y1="73" x2="83" y2="83"/>
+            <line x1="83" y1="17" x2="73" y2="27"/>
+            <line x1="27" y1="73" x2="17" y2="83"/>
+          </g>
+          <circle class="sun-core" cx="50" cy="50" r="19"/>
+          <path class="sun-smile" d="M40 54 Q50 63 60 54" fill="none"/>
+          <circle class="sun-eye" cx="43" cy="45" r="2"/>
+          <circle class="sun-eye" cx="57" cy="45" r="2"/>
+        </svg>
+      </div>
     </div>
   </section>
 
@@ -68,7 +85,13 @@
     <p class="chapter-num fx">II</p>
     <h2 class="chapter-title fx">Me enamora tu curiosidad, tus ocurrencias y el como te importan tanto las cosas</h2>
     <div class="prose fx">
-      una imagen animada bonita referente al titulo
+      <div class="anim-box anim-sparkle" aria-hidden="true">
+        <svg viewBox="0 0 100 100">
+          <path class="spark s1" d="M50 20 L55 45 L80 50 L55 55 L50 80 L45 55 L20 50 L45 45 Z"/>
+          <path class="spark s2" d="M78 20 L80.5 27 L88 30 L80.5 33 L78 40 L75.5 33 L68 30 L75.5 27 Z"/>
+          <path class="spark s3" d="M20 62 L22 68 L28 70 L22 72 L20 78 L18 72 L12 70 L18 68 Z"/>
+        </svg>
+      </div>
     </div>
   </section>
 
@@ -85,7 +108,11 @@
     <p class="chapter-num fx">III</p>
     <h2 class="chapter-title fx">Me encanta tu sinceridad, el como me sinto a tu lado y que quieras saber que me pasa cuando vez una actitud diferente en mi </h2>
     <div class="prose fx">
-      una imagen animada bonita referente al titulo
+      <div class="anim-box anim-heartbeat" aria-hidden="true">
+        <svg viewBox="0 0 100 100">
+          <path class="heart-shape" d="M50 86 C20 64,6 44,6 27 C6 11,20 1,35 7 C42 10,47 15,50 21 C53 15,58 10,65 7 C80 1,94 11,94 27 C94 44,80 64,50 86 Z"/>
+        </svg>
+      </div>
     </div>
   </section>
 
@@ -117,12 +144,16 @@
   <!-- CLOSING -->
   <section class="slide closing" data-duration="99999">
     <p class="closing-line fx">Que tengas un dia increible Mi Amor.</p>
-    <p class="closing-sub fx">una imagen animada bonita referente al titulo</p>
+    <div class="anim-box anim-float-hearts fx" aria-hidden="true">
+      <svg viewBox="0 0 100 60" class="fh f1"><path d="M50 50 C30 36,20 24,20 14 C20 5,29 0,38 4 C43 6,47 9,50 13 C53 9,57 6,62 4 C71 0,80 5,80 14 C80 24,70 36,50 50 Z"/></svg>
+      <svg viewBox="0 0 100 60" class="fh f2"><path d="M50 50 C30 36,20 24,20 14 C20 5,29 0,38 4 C43 6,47 9,50 13 C53 9,57 6,62 4 C71 0,80 5,80 14 C80 24,70 36,50 50 Z"/></svg>
+      <svg viewBox="0 0 100 60" class="fh f3"><path d="M50 50 C30 36,20 24,20 14 C20 5,29 0,38 4 C43 6,47 9,50 13 C53 9,57 6,62 4 C71 0,80 5,80 14 C80 24,70 36,50 50 Z"/></svg>
+    </div>
     <p class="closing-final fx">Tengo la certeza que quiero pasar el resto mi vida contigo mi amor</p>
   </section>
 
 </div>
 
-<script src="js/main.js?v=3"></script>
+<script src="js/main.js?v=4"></script>
 </body>
 </html>
