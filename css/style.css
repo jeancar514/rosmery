@@ -305,11 +305,11 @@ img{max-width:100%;display:block;}
 }
 
 /* entrance effect variants */
-.fx-up{--ex:0px;--ey:52px;--escale:1;}
-.fx-down{--ex:0px;--ey:-52px;--escale:1;}
-.fx-left{--ex:-72px;--ey:0px;--escale:1;}
-.fx-right{--ex:72px;--ey:0px;--escale:1;}
-.fx-zoom{--ex:0px;--ey:18px;--escale:0.7;}
+.fx-up{--ex:0px;--ey:90px;--escale:1;}
+.fx-down{--ex:0px;--ey:-90px;--escale:1;}
+.fx-left{--ex:-130px;--ey:0px;--escale:1;}
+.fx-right{--ex:130px;--ey:0px;--escale:1;}
+.fx-zoom{--ex:0px;--ey:0px;--escale:0.35;}
 
 /* ---------- VIDEO ---------- */
 .video-block .video-frame{

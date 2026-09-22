@@ -1,15 +1,26 @@
 // Curtain
 const curtain = document.getElementById('curtain');
 const enterBtn = document.getElementById('enterBtn');
-function unlockVideos(){
-  document.querySelectorAll('.gif-video').forEach(v=>{
+function safePlay(v){
+  try{
     const p = v.play();
-    if(p && p.then){ p.then(()=>{ v.pause(); v.currentTime = 0; }).catch(()=>{}); }
-  });
+    if(p && p.catch) p.catch(()=>{});
+  }catch(e){}
+}
+function safePause(v){
+  try{ v.pause(); }catch(e){}
+}
+function unlockVideos(){
+  try{
+    document.querySelectorAll('.gif-video').forEach(v=>{
+      safePlay(v);
+      setTimeout(()=>{ safePause(v); try{ v.currentTime = 0; }catch(e){} }, 60);
+    });
+  }catch(e){}
 }
 function openCurtain(){
   curtain.classList.add('hidden');
-  unlockVideos();
+  try{ unlockVideos(); }catch(e){}
   startStories();
 }
 enterBtn.addEventListener('click', openCurtain);
@@ -53,15 +64,15 @@ let started = false;
 function clearVideos(){
   slides.forEach(sl=>{
     const v = sl.querySelector('video');
-    if(v){ v.pause(); }
+    if(v){ safePause(v); }
   });
 }
 
 function playVideoIn(slide){
   const v = slide.querySelector('video');
   if(v){
-    v.currentTime = 0;
-    v.play().catch(()=>{});
+    try{ v.currentTime = 0; }catch(e){}
+    safePlay(v);
   }
 }
 
